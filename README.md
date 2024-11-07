@@ -1,6 +1,6 @@
 # jetson_dli_s
 
-```
+```bash```
 1. SD 카드 포멧터 다운 및 포멧팅
 
 2. jetack 링크로 다운로드
