@@ -48,7 +48,13 @@
          설치 완료 후 keyboard input method system 항목을 fcitx로 변경
       2. System rebooting
       3. 우측 상단의 키보드 아이콘 늘릭으러 configure 선택
-         ![1](https://github.com/user-attachments/assets/b47199fb-d4c1-4167-a365-0e495c4882c0)
-
-
+         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+      4. Input Method Configuration 에서 하단 "+" 버튼 클릭
+         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+      5. "Only Show Current Language"에 체크가 된 것을 해제 및 hangul 검색
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtX8Et%2FbtqwMJGj2Ku%2FTvy1C5hYGur9h6OTlH5dw1%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+      6. Input Method Configuration &rarr; Global Config &rarr; Trigger Input Method의 왼쪽 버튼 클릭 및 "한영키" 눌러서 언어 변경 
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk9mHo%2FbtqwKSdmDdI%2FSyxQUATWJdtf1bMFl62QdK%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+       7. "한영키" 눌러서 결과 확인
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo77V5%2FbtqwMJzxJkV%2Fr7mpuIQLjWnSDyXTjivzP0%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
 
