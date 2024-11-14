@@ -48,7 +48,7 @@
          설치 완료 후 keyboard input method system 항목을 fcitx로 변경
       2. System rebooting
       3. 우측 상단의 키보드 아이콘 늘릭으러 configure 선택
-         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEtiAg%2FbtqwNtC0Kq0%2FhZXt8yeobGMtKTO8svQkZ1%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
-         
+         ![1](https://github.com/user-attachments/assets/b47199fb-d4c1-4167-a365-0e495c4882c0)
+
 
 
