@@ -32,6 +32,23 @@
    * 와이파이 연결
    * 지역설정: seoul
    * name(dli), Password(dli) 설정
-   * reboot 한 뒤 화면 나타 
+   * reboot 한 뒤 화면이 나타남.
+2. 한글 설치
+   * 시작 전 명령어 입력
+     > 명령어
+       ```bash
+       sudo apt-get update
+       dli@dli-desktop:~$ sudo apt-get install fcitx-hangul
+       dli@dli-desktop:~$ im-config -n fcitx
+       reboot
+       ```
+    * 우분투 setting
+      1. Region & Language 수행
+         <br>&rarr; Mange installed Language 버튼 실행<br>
+         설치 완료 후 keyboard input method system 항목을 fcitx로 변경
+      2. System rebooting
+      3. 우측 상단의 키보드 아이콘 늘릭으러 configure 선택
+         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEtiAg%2FbtqwNtC0Kq0%2FhZXt8yeobGMtKTO8svQkZ1%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+         
 
 
