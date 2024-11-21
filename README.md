@@ -48,10 +48,10 @@
          설치 완료 후 keyboard input method system 항목을 fcitx로 변경
       2. System rebooting
       3. 우측 상단의 키보드 아이콘 늘릭으러 configure 선택
-         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+         <br><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
          
       4. Input Method Configuration 에서 하단 "+" 버튼 클릭
-         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+         <br><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FIdlr5%2FbtqwMLjQKJt%2FcVmuAK6Q9Mh86POcg5KYN0%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
          
       5. "Only Show Current Language"에 체크가 된 것을 해제 및 hangul 검색
           <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtX8Et%2FbtqwMJGj2Ku%2FTvy1C5hYGur9h6OTlH5dw1%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
@@ -60,5 +60,45 @@
           <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk9mHo%2FbtqwKSdmDdI%2FSyxQUATWJdtf1bMFl62QdK%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
           
        7. "한영키" 눌러서 결과 확인
-          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo77V5%2FbtqwMJzxJkV%2Fr7mpuIQLjWnSDyXTjivzP0%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+          <br><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo77V5%2FbtqwMJzxJkV%2Fr7mpuIQLjWnSDyXTjivzP0%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+
+  # 쿨링팬과 jtop
+   <br> jtop: system monitoring tool <br>
+   jetson nano의 온도체크
+   ```bash
+   sudo apt install python3-pip
+   sudo -H pip3 install -U jetson-stats
+   sudo apt-get upgrade
+   reboot
+   jtop
+   ```
+   <br>![스크린샷 2024-11-21 210653](https://github.com/user-attachments/assets/adca3433-e928-4890-b4bb-bff0d425fd3c)<br/>
+   
+   <br> jetson nano에 쿨링팬 장착 <br>
+   <br>![image](https://github.com/user-attachments/assets/dec02a53-5949-496a-9c7b-07637a209e45)<br/>
+
+   terminal을 열고 명령어 작성
+   ```bash
+    sudo sh -c 'echo 128 > /sys/devices/pwm-fan/target_pwm'
+   ```
+
+  # Camera
+  1. jetson 의 카메라 인식 확인
+     ```bash
+     ls /dev/vi*
+     ```
+  2. gitclone cloning
+     ```bash
+      git clone https://github.com/jetsonhacks/USB-Camera.git
+     ```
+     [result]
+     ```bash
+     Cloning into 'USB-Camera'...
+      remote: Enumerating objects: 27, done.
+      remote: Counting objects: 100% (27/27), done.
+      remote: Compressing objects: 100% (24/24), done.
+      remote: Total 27 (delta 11), reused 8 (delta 2), pack-reused 0
+      Unpacking objects: 100% (27/27), done.
+     ```
+
 
