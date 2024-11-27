@@ -57,7 +57,7 @@
           <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtX8Et%2FbtqwMJGj2Ku%2FTvy1C5hYGur9h6OTlH5dw1%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
           
       6. Input Method Configuration &rarr; Global Config &rarr; Trigger Input Method의 왼쪽 버튼 클릭 및 "한영키" 눌러서 언어 변경 
-          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk9mHo%2FbtqwKSdmDdI%2FSyxQUATWJdtf1bMFl62QdK%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
+          <br><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk9mHo%2FbtqwKSdmDdI%2FSyxQUATWJdtf1bMFl62QdK%2Fimg.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
           
        7. "한영키" 눌러서 결과 확인
           <br><img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo77V5%2FbtqwMJzxJkV%2Fr7mpuIQLjWnSDyXTjivzP0%2Fimg.jpg" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="RubberDuck"></img><br/>
@@ -100,5 +100,99 @@
       remote: Total 27 (delta 11), reused 8 (delta 2), pack-reused 0
       Unpacking objects: 100% (27/27), done.
      ```
+  3. Camera 작동 확인
+     [code]
+     ```bash
+     cd USB-Camera
+     ```
+     ```bash
+     ~/USB-Camra$ ls
+     ```
+     [result]
+     ```bash
+     face-detect-usb.py  LICENSE  README.md  usb-camera-gst.py  usb-camera-simple.py
+     ```
+     
+     [code]
+     ```bash
+     python3 usb-camera-gst.py
+     ```
+
+# Dockor 설치
+  1. CODE
+  ```bash
+  ls
+  ```
+  ```bash
+  Desktop    examples.desktop  Public
+  Documents  Music             Templates
+  Downloads  Pictures          Videos
+  ```
+  교육과정에 필요한 dir 추가
+  ```bash
+  mkdir -p ~/nvdli-data
+  ls
+  ```
+  ```bash
+  Desktop           Music       Templates
+  Documents         nvdli-data  Videos
+  Downloads         Pictures
+  examples.desktop  Public
+  ```
+
+  ```bash
+  sudo docker run --runtime nvidia -it --rm --network host \
+    --memory=500M --memory-swap=4G \
+    --volume ~/nvdli-data:/nvdli-nano/data \
+    --volume /tmp/argus_socket:/tmp/argus_socket \
+    --device /dev/video0 \
+    nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.7.1kr
+  ```
+  ```bash
+  ls
+  ```
+
+  ```bash
+  ./docker_dli_run.sh
+  ```
+  ```bash
+  [sudo] password for dli:
+  Unable to find image 'nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.6.1kr' locally
+  v2.0.2-r32.6.1kr: Pulling from nvidia/dli/dli-nano-ai
+  b9bb7af7248f: Pulling fs layer
+  2e163bfa50fc: Download complete
+  c8bd4a89e71c: Pulling fs layer
+  0a8ce4f08307: Waiting
+  334a570c08f5: Downloading  5.855MB/165.2MB  ~~~~~~
+  ```
+
+  [result]
+  ```bash
+  0be277f6cdcf: Pull complete
+  561a3bf4f244: Pull complete
+  2a5d5ea0506f: Pull complete
+  ed5b8317fa2e: Pull complete
+  Digest: sha256:87d580feed4a9670dfe343cf352239065ff9c7789cfa3a3b36adf828b7e50ac0
+  Status: Downloaded newer image for nvcr.io/nvidia/dli/dli-nano-ai:v2.0.2-r32.6.1kr     allow 10 sec for JupyterLab to start @ http://192.168.55.1:8888 (password           
+  dlinano)c932e62bbab: Waiting
+  JupterLab logging location:  /var/log/jupyter.log  (inside the container)
+  root@dli-desktop:/nvdli-nano#
+  ```
+
+  2. Web browser 내의 주소창 입력
+     ```bash
+     192.168.55.1:8888
+     ```
 
 
+
+# Thumbs Project
+1. image classification project
+
+   주피터 노트북에 있는 모든 셀을 실행한다.
+   
+2. 데이터 셋 만들기
+   <br>![image](https://github.com/user-attachments/assets/f91e81fd-8731-4daa-9e72-42975960e0a0)<br/>
+   1) 위의 그림과 같이 A, B Dataset으로 나누어서 카메라로 직접 thumbs up/ down 직접 수집한다.
+   2) 수집한 Dataset을 기반으로 모델을 훈련시킴
+   3) 훈련시킨 모델의 성능을 확인해보기 위해 카메라에 thumbs up/ down 동작을 취해서 확인해본다.
